@@ -1,4 +1,22 @@
-ultralytics>=8.3.0
-opencv-python-headless>=4.8.0
+# Core CV / ML
+ultralytics>=8.3.0          # YOLO + built-in ByteTrack/BoT-SORT
+torch>=2.2.0               # auto-selects CUDA / MPS / CPU
+opencv-python>=4.8.0
 numpy>=1.24.0
+scipy>=1.11.0
 scikit-learn>=1.3.0
+lap>=0.4.0                 # required by ByteTrack association
+
+# Backend API
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.9    # file uploads
+
+# Testing
+pytest>=8.0.0
+httpx>=0.27.0              # FastAPI TestClient
+
+# --- Optional (jersey OCR). Install ONE to enable number recognition. ---
+# The pipeline degrades gracefully to "?" if neither is present.
+# easyocr>=1.7.0
+# paddleocr>=2.7.0
